@@ -90,7 +90,7 @@
         }
         @keyframes rotateIn {
             from { transform: rotate(-10deg) scale(0.9); opacity: 0; }
-            to { transform: rotate(0deg) scale(1); opacity: 1; }
+            to { transform: rotate(0deg) scale(1); }
         }
 
         /* Progress Tracker Styling */
@@ -147,57 +147,12 @@
             color: #1e3a8a; /* blue-900 */
             font-weight: 600;
         }
-        .progress-line {
-            position: absolute;
-            height: 4px;
-            background-color: #cbd5e1; /* gray-400 */
-            width: calc(100% - 5rem); /* Adjust based on circle width */
-            top: 2rem; /* Half of circle height */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-            transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out;
-        }
-        .progress-step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background-color: #cbd5e1;
-            left: 50%;
-            top: 1.15rem; /* Center with circle */
-            transform: translateX(calc(50% + 1.25rem)); /* Position between circles */
-            z-index: -1;
-        }
-        .progress-step:not(:first-child)::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background-color: #cbd5e1;
-            right: 50%;
-            top: 1.15rem; /* Center with circle */
-            transform: translateX(calc(-50% - 1.25rem)); /* Position between circles */
-            z-index: -1;
-        }
-
-        .progress-step.completed + .progress-step .progress-step-circle {
-            background-color: #60a5fa; /* blue-400 for next pending */
-        }
-        .progress-step.completed + .progress-step:before {
-            background-color: #3b82f6; /* blue-500 */
-        }
-
-        /* Line between steps */
         .progress-step-connector {
             flex-grow: 1;
             height: 4px;
             background-color: #cbd5e1;
             transition: background-color 0.3s ease-in-out;
             margin: 0 0.5rem; /* Space between line and circle */
-        }
-        .progress-step.completed + .progress-step-connector {
-            background-color: #3b82f6; /* blue-500 */
         }
         .progress-step-connector.completed {
              background-color: #3b82f6; /* blue-500 */
@@ -207,11 +162,6 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center p-4">
-
-    <!-- Arctic Innovation Consulting Solutions Pvt. Ltd. Logo -->
-    <!-- Removed image_76ea24.png-0e5c0a3e-76ab-4a58-83fc-953752b93696 as requested -->
-    <!-- <img src="image_76ea24.png-0e5c0a3e-76ab-4a58-83fc-953752b93696" alt="Arctic Innovation Consulting Solutions Pvt. Ltd. Logo" class="w-auto h-20 mx-auto my-4 block rounded-lg shadow-md"> -->
-
 
     <div class="max-w-6xl w-full bg-white rounded-3xl shadow-xl p-6 md:p-10 lg:p-12 mb-8 border border-blue-100">
         <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4 drop-shadow-sm bounce-in">
@@ -288,12 +238,20 @@
                 Welcome, future leaders! This meticulously crafted Leadership Induction Program is your gateway to a transformative experience. We're here to equip you with the strategic insights, invaluable skills, and the profound mindset necessary to thrive in pivotal management roles within our dynamic organization.
             </p>
             <p class="text-gray-700 leading-relaxed mb-4">
-                Through a blend of immersive learning modules, personalized mentorship from seasoned leaders, and practical, real-world assessments, you will not only grasp the essence of effective leadership but also cultivate your unique style to inspire, innovate, and drive collective success.
+                Becoming a leader here is more than just a job title; it's a profound responsibility. You'll directly influence the careers, growth, and daily lives of your team members. Your decisions will shape projects, impact company direction, and contribute to our collective well-being. This journey demands deep commitment, not just of your time, but of your passion and dedication to people.
             </p>
             <img src="https://placehold.co/800x400/CCE0FF/003366?text=Welcome+to+Leadership+Journey" alt="Welcome to Leadership Journey" class="w-full rounded-lg shadow-md mt-6 mb-4 hover-grow">
             <p class="text-gray-700 leading-relaxed">
                 At our core, we believe that empowering leaders is synonymous with organizational excellence and groundbreaking innovation. This program stands as our unwavering commitment to nurturing your continuous growth, fostering deep collaboration, and setting new benchmarks for achievement. We are genuinely excited to witness your journey unfold as you prepare to embrace significant new challenges and make an indelible impact on the future trajectory of our company.
             </p>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 mt-8">
+                <h3 class="text-xl font-semibold text-red-800 mb-3 flex items-center">
+                    <span class="mr-3 text-red-500 text-3xl">⚠️</span> A Note on Commitment
+                </h3>
+                <p class="text-gray-700">
+                    This leadership path is a long-term commitment, designed for those ready to deeply invest in their growth and the success of others. We understand that sometimes, a role may not be the right fit. If, at any point during this program, you feel this leadership journey isn't aligned with your aspirations, we encourage an open conversation with HR and your mentor. Our goal is for every individual to thrive in a role that genuinely suits them, and we support honest self-assessment.
+                </p>
+            </div>
         </div>
 
         <!-- Eligibility Criteria Tab -->
@@ -306,7 +264,7 @@
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-3 pl-4">
                 <li>
-                    <strong>Seasoned Professional Experience:</strong> Possessing a minimum of <strong class="text-blue-600">4-5 years of dedicated, full-time working experience</strong> within our organization. This criterion ensures a foundational understanding of our culture and operations.
+                    <strong>Significant Company Experience:</strong> Possessing a significant amount of dedicated, full-time working experience within our organization. This ensures a foundational understanding of our culture and operations.
                 </li>
                 <li>
                     <strong>Proven Mentorship & Guidance Acumen:</strong> Demonstrated and verifiable experience in actively guiding, mentoring, or coaching at least <strong class="text-blue-600">1-2 peers or mentees</strong>. This highlights your capability to foster growth in others.
@@ -316,6 +274,9 @@
                 </li>
                 <li>
                     <strong>Innately Identified Leadership Potential:</strong> Clear and compelling evidence of inherent leadership qualities, observed through significant contributions to past projects, a natural initiative in complex problem-solving, and a demonstrable inclination to take ownership and champion progress.
+                </li>
+                <li>
+                    <strong>Long-Term Commitment:</strong> A clear understanding that this role is a long-term game, requiring a commitment of 2-3 years to be fully integrated and to make a lasting impact within the organization.
                 </li>
                 <li>
                     <strong>Unyielding Commitment to Growth:</strong> An unequivocally expressed interest and a profound, passionate dedication to continuously honing leadership competencies, eagerly embracing new learning paradigms, and zealously taking on amplified responsibilities to drive organizational success.
@@ -340,7 +301,6 @@
             </p>
             <img src="https://placehold.co/800x400/DEDCFD/6A0DAD?text=Mentorship+Guidance" alt="Mentorship Guidance" class="w-full rounded-lg shadow-md mt-6 mb-4 hover-grow">
             <div class="mt-8 text-right">
-                <!-- This button is now automatically "clicked" by JS upon opening this tab -->
                 <button class="btn-primary" onclick="markTabComplete('mentor-selection')">Mark Section Complete & Proceed</button>
             </div>
         </div>
@@ -448,774 +408,487 @@
 
                 <div class="mb-6 p-4 bg-teal-50 rounded-lg shadow-sm border border-teal-100">
                     <h3 class="text-xl font-medium text-teal-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">⚖️</span> 10. The Non-negotiable Value System / Ground Rules
+                        <span class="mr-2">⚖️</span> 10. The Power of Choice
                     </h3>
-                    <p class="text-gray-700">This principle underscores the paramount importance of meticulously establishing and rigorously adhering to a core set of fundamental values, transparent ethical guidelines, and unwavering ground rules. These meticulously defined principles serve as the absolute bedrock for all team behavior, decision-making processes, and interpersonal interactions. By clearly outlining these non-negotiable standards, leaders ensure consistency, cultivate profound trust, and instill a unified, unshakeable sense of purpose within the organization, creating a predictable and principled environment for all.</p>
-                    <img src="https://placehold.co/600x300/D1F5F0/008080?text=Core+Values+Rules" alt="Ground Rules" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/A7FFEB/00BFA5?text=Ethical+Leadership" alt="Ethical Leadership" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <p class="text-gray-700">This principle emphasizes that true empowerment stems from the conscious choices we make. As leaders, every decision, every reaction, and every action is a choice. Understanding this allows us to take full control of our responses to challenges, to proactively shape our environment, and to intentionally drive positive outcomes. It's about moving from a reactive stance to a powerful, intentional, and responsible approach to leadership, recognizing that our choices define our impact.</p>
+                    <img src="https://placehold.co/600x300/D0F0F8/007B8C?text=Power+of+Choice" alt="Power of Choice" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/B2EBF2/006064?text=Intentional+Leadership" alt="Intentional Leadership" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
+
                 <div class="mt-8 text-right">
                     <button class="btn-success" onclick="markSubTabReviewed('team-dynamics')">Mark This Section Reviewed</button>
                 </div>
             </div>
 
-            <!-- Sub-tab 3: Strategic Execution & Resilience -->
+            <!-- Sub-tab 3: Strategic Execution & Growth -->
             <div id="strategic-execution" class="sub-tab-content p-4 bg-gray-50 rounded-lg shadow-inner border border-gray-100">
+                <div class="mb-6 p-4 bg-orange-50 rounded-lg shadow-sm border border-orange-100">
+                    <h3 class="text-xl font-medium text-orange-800 mb-2 flex items-center slide-in-right">
+                        <span class="mr-2">📈</span> 4. Growth is Always Painful
+                    </h3>
+                    <p class="text-gray-700">This fundamental truth acknowledges that genuine growth—whether personal, professional, or organizational—is rarely comfortable. It often involves stepping outside of comfort zones, confronting challenges, learning from setbacks, and adapting to new realities. As leaders, embracing this "pain" as a necessary part of progress allows us to lead our teams through change with resilience, empathy, and a clear vision that the discomfort of today leads to the strength and success of tomorrow.</p>
+                    <img src="https://placehold.co/600x300/FFEDD5/CC7B00?text=Growth+Pain" alt="Growth is Painful" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/FFE0B2/FF9800?text=Embrace+Change" alt="Embrace Change" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                </div>
+
                 <div class="mb-6 p-4 bg-red-50 rounded-lg shadow-sm border border-red-100">
                     <h3 class="text-xl font-medium text-red-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">🎯</span> 4. Focus on Actions and Behaviors, Not Just Goals
+                        <span class="mr-2">🎯</span> 7. The 20% Rule (Focus on High Impact)
                     </h3>
-                    <p class="text-gray-700 mb-2">A critical and transformative shift in mindset for leaders, moving beyond mere aspirations to tangible progress:</p>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li><strong>Embrace the "Boring Stuff"!</strong> Realizing truly significant, impactful goals often hinges on the consistent, diligent, and perhaps even unglamorous execution of seemingly mundane or repetitive tasks. These persistent, foundational efforts are the true building blocks of monumental success.</li>
-                        <li><strong>Beyond the Finish Line:</strong> While clearly defined, ambitious goals provide essential direction and motivation, an exclusive or myopic focus solely on them can inadvertently obscure the vital, day-to-day practical steps, behaviors, and processes required to actually achieve those goals.</li>
-                        <li><strong>The Power of the Process:</strong> Genuine, sustainable progress and lasting accomplishment undeniably stem from diligently performing the necessary daily actions and consciously cultivating positive, high-impact behaviors that directly and consistently drive towards success. These consistent efforts, though not always immediately glamorous, are the bedrock upon which all achievement is built.</li>
-                    </ul>
-                    <img src="https://placehold.co/600x300/FFDDC1/CC5500?text=Actions+Not+Just+Goals" alt="Actions vs Goals" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/FFCCBC/FF5722?text=Process+Over+Outcome" alt="Process Over Outcome" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <p class="text-gray-700">Inspired by the Pareto Principle, the 20% rule for leaders suggests that roughly 20% of your efforts will yield 80% of your results. This is a powerful reminder to strategically focus your time, energy, and resources on the most impactful tasks, initiatives, and people. As a leader, identifying and prioritizing these critical 20% allows you to maximize efficiency, drive significant progress, and achieve disproportionately positive outcomes, rather than getting bogged down in low-impact activities. It's about working smarter, not just harder.</p>
+                    <img src="https://placehold.co/600x300/FFDCDC/CC0000?text=20+Percent+Rule" alt="20% Rule" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/FFC9C9/FF5252?text=High+Impact+Focus" alt="High Impact Focus" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
 
                 <div class="mb-6 p-4 bg-indigo-50 rounded-lg shadow-sm border border-indigo-100">
                     <h3 class="text-xl font-medium text-indigo-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">♾️</span> 6. Finite Vs. Infinite Games
+                        <span class="mr-2">⏳</span> 8. Time Management: The 3 Buckets
                     </h3>
-                    <p class="text-gray-700 mb-2">This profound and transformative concept distinguishes between two fundamentally different approaches to engagement and strategy, profoundly applicable in both the competitive landscape of business and the broader journey of life:</p>
+                    <p class="text-gray-700 mb-2">Effective time management for leaders involves categorizing tasks into three essential buckets to ensure strategic allocation of effort:</p>
                     <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li><strong>A Finite Game:</strong> Characterized by clearly known players, established and often unchanging fixed rules, and explicitly defined objectives that lead to a clear win/lose outcome (e.g., a single baseball game or a quarterly sales target). The primary motivation is to triumph over defined opponents, and joy is often derived from direct comparison and conquest.</li>
-                        <li><strong>An Infinite Game:</strong> Defined by dynamic and often evolving players, rules that can and do change over time, and the overarching objective of simply perpetuating the game itself – focusing on continuous existence, adaptive growth, and perpetual improvement (e.g., the enduring journey of a business, or a long-term career). The motivation is self-mastery, continuous adaptation, and sustained contribution, with joy stemming from advancement and the resilience to keep playing.</li>
+                        <li><strong>Urgent & Important (Firefighting):</strong> Tasks that demand immediate attention and have significant consequences. Minimize time here by proactive planning.</li>
+                        <li><strong>Important but Not Urgent (Planning & Development):</strong> Crucial for long-term success and growth. This is where strategic planning, team development, and relationship building reside. Maximize time here.</li>
+                        <li><strong>Urgent but Not Important (Delegation):</strong> Tasks that require immediate action but don't necessarily need your direct involvement. These are prime candidates for delegation to empower your team.</li>
                     </ul>
-                    <p class="text-gray-700 mt-2">Leaders are passionately encouraged to embrace and embody an "infinite game" mindset, prioritizing long-term organizational sustainability, relentless innovation, continuous personal and team improvement, and adaptive growth over fleeting short-term victories. This ensures enduring relevance and impact.</p>
-                    <img src="https://placehold.co/600x300/E0ECFF/4A4A8B?text=Infinite+Game+Mindset" alt="Finite vs Infinite Games" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/C5CAE9/5E35B1?text=Longterm+Vision" alt="Long-term Vision" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                </div>
-
-                <div class="mb-6 p-4 bg-pink-50 rounded-lg shadow-sm border border-pink-100">
-                    <h3 class="text-xl font-medium text-pink-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">⚖️</span> 7. Intention Vs. Action (Stephen Covey's Wisdom)
-                    </h3>
-                    <p class="text-gray-700 italic border-l-4 border-pink-500 pl-4 py-1">
-                        "We judge ourselves by our intentions. And others by their actions."
-                    </p>
-                    <p class="text-gray-700 mt-2">
-                        This timeless quote by Stephen Covey serves as an exceptionally powerful reminder of a common, yet often overlooked, human bias. As leaders, it is absolutely imperative to acutely recognize that your credibility, overall effectiveness, and professional integrity will ultimately be assessed by your team members, colleagues, and all stakeholders based on what you *do*—your tangible actions and observable behaviors—rather than merely what you *intend* to do. In the realm of leadership, consistent, ethical, and decisive actions speak unequivocally louder than words, serving as the bedrock upon which enduring trust and profound respect are built.
-                    </p>
-                    <img src="https://placehold.co/600x300/FFDCEF/C71585?text=Actions+Speak+Louder" alt="Intention vs Action" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/F8BBDB/E91E63?text=Integrity+Trust" alt="Integrity and Trust" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                </div>
-
-                <div class="mb-6 p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-medium text-gray-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">🔄</span> 8. Reset, Refocus, Restart
-                    </h3>
-                    <p class="text-gray-700">This powerful mantra embodies the very essence of resilience and dynamic adaptability—indispensable traits for any effective leader navigating today's complex landscape. When inevitably confronted with setbacks, unexpected challenges, or periods of profound uncertainty, great leaders must:</p>
-                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
-                        <li><strong>Reset:</strong> Take a strategic, deliberate step back, calmly acknowledge the current state with absolute clarity, and emotionally detach from any immediate, reactive impulses.</li>
-                        <li><strong>Refocus:</strong> Meticulously re-evaluate priorities, precisely re-align goals with the overarching vision, and astutely identify new, viable pathways forward with laser-like precision and renewed purpose.</li>
-                        <li><strong>Restart:</strong> Re-engage with revitalized energy, a carefully refined strategy, and an unshakeable determination, viewing obstacles not as roadblocks, but as invaluable opportunities for profound growth and innovative solutions.</li>
-                    </ul>
-                    <img src="https://placehold.co/600x300/F0F0F0/6C757D?text=Resilience+Adaptability" alt="Reset Refocus Restart" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/D0D0D0/404040?text=Growth+Mindset" alt="Growth Mindset" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                </div>
-
-                <div class="mb-6 p-4 bg-orange-50 rounded-lg shadow-sm border border-orange-100">
-                    <h3 class="text-xl font-medium text-orange-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">🔗</span> 9. The Cycle of Resistance
-                    </h3>
-                    <p class="text-gray-700">This compelling concept graphically illustrates a common, often insidious, pattern of negative and unproductive responses to external events or internal changes, which frequently spirals into a self-perpetuating cycle of victimhood, stagnation, and ultimately, self-deception:</p>
-                    <p class="text-gray-700 text-sm mt-2 font-mono leading-relaxed p-3 bg-white rounded-md border border-orange-200">
-                        Event → Feeling Helpless & Unhappy → Playing the Victim → Natural Response → Co-operative Suffering → Busy Being Right → Why should I!? → Blame others → Pretending like the beholder of truth → Betray Natural Response → Justify self → Self Deception.
-                    </p>
-                    <p class="text-gray-700 mt-2">
-                        Pioneering leaders must develop an exceptionally keen awareness to recognize this detrimental cycle—both within themselves and within their teams. Their crucial role is to actively intervene and break free from its suffocating grip, consistently fostering a proactive, solution-oriented, accountable, and ultimately empowering mindset across the organization.
-                    </p>
-                    <img src="https://placehold.co/600x300/FFEFD6/D9534F?text=Break+Resistance+Cycle" alt="Cycle of Resistance" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/FDE2C3/FF7043?text=Overcome+Obstacles" alt="Overcome+Obstacles" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x300/C5CAE9/3F51B5?text=Time+Buckets" alt="Time Management Buckets" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/9FA8DA/5C6BC0?text=Strategic+Time" alt="Strategic Time" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
                 <div class="mt-8 text-right">
                     <button class="btn-success" onclick="markSubTabReviewed('strategic-execution')">Mark This Section Reviewed</button>
                 </div>
             </div>
 
-            <!-- Sub-tab 4: The Leader's Accountability & Growth -->
+            <!-- Sub-tab 4: The Leader's Accountability -->
             <div id="leader-accountability" class="sub-tab-content p-4 bg-gray-50 rounded-lg shadow-inner border border-gray-100">
-                <div class="mb-6 p-4 bg-emerald-50 rounded-lg shadow-sm border border-emerald-100">
-                    <h3 class="text-xl font-medium text-emerald-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">👑</span> 13. The 1st Rule of Leadership
+                <div class="mb-6 p-4 bg-gray-100 rounded-lg shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2 flex items-center slide-in-right">
+                        <span class="mr-2">🔍</span> 6. The 5 Whys (Root Cause Analysis)
                     </h3>
-                    <p class="text-gray-700 italic border-l-4 border-emerald-500 pl-4 py-1">
-                        "Everything is your fault."
-                    </p>
-                    <p class="text-gray-700 mt-2">
-                        This bold, seemingly provocative, yet profoundly true statement serves to powerfully underscore the ultimate and all-encompassing accountability of a truly great leader. While it does not literally mean a leader is to blame for every single minor misstep, it unequivocally signifies that a leader embraces ultimate responsibility for the team's entire spectrum of outcomes—from its soaring successes to its valuable lessons learned from failures, and its overall strategic trajectory. It fundamentally embodies a mindset of relentless proactive problem-solving, unwavering support for the team, and a steadfast refusal to externalize blame, choosing instead to identify solutions and empower success.
-                    </p>
-                    <img src="https://placehold.co/600x300/DFFCE1/28A745?text=Ultimate+Accountability" alt="1st Rule of Leadership" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/C8E6C9/1B5E20?text=Leadership+Responsibility" alt="Leadership Responsibility" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <p class="text-gray-700">The "5 Whys" is a simple yet powerful problem-solving technique designed to uncover the root cause of an issue by repeatedly asking "Why?" (typically five times). Instead of addressing symptoms, this method encourages leaders to dig deeper, ensuring that solutions are implemented at the core of the problem, preventing recurrence. It fosters a culture of thorough analysis and genuine problem resolution.</p>
+                    <img src="https://placehold.co/600x300/E0E0E0/616161?text=5+Whys" alt="5 Whys" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/BDBDBD/424242?text=Root+Cause" alt="Root Cause Analysis" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
 
-                <div class="mb-6 p-4 bg-amber-50 rounded-lg shadow-sm border border-amber-100">
-                    <h3 class="text-xl font-medium text-amber-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">⚙️</span> 14. BECOME A SMOOTH OPERATOR / Slow is Smooth, Smooth is Fast
+                <div class="mb-6 p-4 bg-pink-50 rounded-lg shadow-sm border border-pink-100">
+                    <h3 class="text-xl font-medium text-pink-800 mb-2 flex items-center slide-in-right">
+                        <span class="mr-2">🗣️</span> 9. Communication: The 3 Filters
                     </h3>
-                    <p class="text-gray-700 italic border-l-4 border-amber-500 pl-4 py-1">
-                        "SLOW IS SMOOTH. SMOOTH IS FAST."
-                    </p>
-                    <p class="text-gray-700 mt-2">
-                        This timeless principle passionately advocates for methodical, deliberate, and exceptionally precise execution. The profound wisdom embedded here is that rushing through tasks often breeds costly errors, inefficiencies, and inevitably necessitates frustrating rework, which paradoxically slows overall progress. Conversely, by strategically investing the necessary time to plan meticulously, prepare thoroughly, and execute tasks with fluidity, grace, and unwavering precision, overall efficiency dramatically improves. This disciplined approach ultimately leads to a genuinely accelerated pace of high-quality accomplishment. Leaders should champion careful, high-quality work over hasty, error-prone endeavors, understanding that true speed comes from flawless execution.
-                    </p>
-                    <img src="https://placehold.co/600x300/FFF8DC/FFC107?text=Smooth+Operator" alt="Slow is Smooth" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/FFF9C4/FFEB3B?text=Efficient+Execution" alt="Efficient Execution" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <p class="text-gray-700 mb-2">Before communicating, especially critical feedback or sensitive information, apply these three filters to ensure your message is effective and constructive:</p>
+                    <ul class="list-disc list-inside text-gray-700 ml-4 space-y-1">
+                        <li><strong>Is it True?</strong> Verify the accuracy and factual basis of your information. Avoid assumptions or hearsay.</li>
+                        <li><strong>Is it Kind?</strong> Consider the impact of your words on the recipient. Deliver feedback with empathy and respect.</li>
+                        <li><strong>Is it Necessary?</strong> Evaluate if the information needs to be shared at this moment, by you, and in this manner. Focus on relevance and purpose.</li>
+                    </ul>
+                    <img src="https://placehold.co/600x300/FCE4EC/C2185B?text=Communication+Filters" alt="Communication Filters" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/F8BBD0/AD1457?text=Effective+Communication" alt="Effective Communication" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
 
-                <div class="mb-6 p-4 bg-fuchsia-50 rounded-lg shadow-sm border border-fuchsia-100">
-                    <h3 class="text-xl font-medium text-fuchsia-800 mb-2 flex items-center slide-in-right">
-                        <span class="mr-2">💜</span> 15. Seize This Moment
+                <div class="mb-6 p-4 bg-brown-50 rounded-lg shadow-sm border border-brown-100">
+                    <h3 class="text-xl font-medium text-brown-800 mb-2 flex items-center slide-in-right">
+                        <span class="mr-2">📈</span> 13. Metrics & Measurement: The Scorecard
                     </h3>
-                    <p class="text-gray-700 italic border-l-4 border-fuchsia-500 pl-4 py-1">
-                        "Play with your whole heart, focus on teamwork, regardless of the outcome."
-                    </p>
-                    <p class="text-gray-700 mt-2">
-                        This inspiring concluding thought serves as a potent call to action, encouraging unwavering full engagement and a deep-seated focus on the intrinsic rewards of contribution. It highlights the profound importance of bringing your absolute best—your passion, your unyielding dedication to the process, and your synergistic collaborative effort—rather than being solely fixated on the ultimate result. It passionately cultivates resilience, inspires courage to embrace challenging opportunities, and fosters a profound sense of satisfaction derived from the journey itself and the collective triumph forged by the team. This is about finding joy and purpose in every step.
-                    </p>
-                    <img src="https://placehold.co/600x300/FCE8F9/E83E8C?text=Seize+the+Moment" alt="Seize This Moment" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
-                    <img src="https://placehold.co/600x200/F0F8FF/B0C4DE?text=Embrace+Challenges" alt="Embrace Challenges" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <p class="text-gray-700">"What gets measured, gets managed." This principle emphasizes the critical role of clear, consistent metrics in driving performance and accountability. As leaders, establishing a comprehensive "scorecard" for your team and initiatives allows you to track progress objectively, identify areas for improvement, and make data-driven decisions. It ensures transparency, aligns efforts with strategic goals, and provides a clear picture of success.</p>
+                    <img src="https://placehold.co/600x300/D7CCC8/5D4037?text=Metrics+Scorecard" alt="Metrics Scorecard" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
+                    <img src="https://placehold.co/600x200/BCAAA4/795548?text=Data+Driven" alt="Data Driven Decisions" class="w-full rounded-lg shadow-sm mt-4 hover-grow">
                 </div>
                 <div class="mt-8 text-right">
                     <button class="btn-success" onclick="markSubTabReviewed('leader-accountability')">Mark This Section Reviewed</button>
                 </div>
             </div>
 
-            <!-- Main Content Tab completion button -->
             <div class="mt-8 text-right">
-                <button class="btn-primary btn-disabled" id="contentTabProceedBtn" onclick="markTabComplete('content')">All Leadership Content Reviewed & Proceed</button>
+                <button class="btn-primary" onclick="markTabComplete('content')">Mark Section Complete & Proceed</button>
             </div>
         </div>
 
-        <!-- Leadership Induction Quiz Tab -->
+        <!-- Assessment Quiz Tab -->
         <div id="quiz" class="tab-content p-6 bg-white rounded-lg shadow-md border border-gray-200">
             <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-400 pb-2 flex items-center rotate-in">
-                <span class="mr-3 text-red-500 text-3xl">📝</span> Assessment Quiz: Test Your Understanding!
+                <span class="mr-3 text-orange-500 text-3xl">📝</span> Assessment Quiz: Test Your Knowledge
             </h2>
-            <p class="text-gray-600 mb-6">
-                Now that you've explored the essential insights, it's time to test your grasp of these critical leadership concepts. Take your time, think deeply, and answer the following questions based on the content provided. Good luck!
+            <p class="text-gray-700 mb-6">
+                This short quiz will help you assess your understanding of the core concepts covered in the "Charting Your Leadership Course" section. Aim for a perfect score!
             </p>
 
-            <form id="quizForm" class="space-y-6">
+            <div class="space-y-6">
                 <!-- Question 1 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">1. According to "The 3 Rooms" concept, which room is primarily focused on evaluating the practicality and feasibility of ideas?</p>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
+                    <p class="font-semibold text-gray-800 mb-3">1. What are the "3 Rooms of Thinking" primarily used for?</p>
                     <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q1" value="a" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> a) Creative Room
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q1" value="a" class="mr-2"> A) Delegating tasks effectively
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q1" value="b" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> b) Realistic Room
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q1" value="b" class="mr-2"> B) Comprehensive problem-solving and idea generation
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q1" value="c" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> c) Critic Room
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q1" value="c" class="mr-2"> C) Managing team conflicts
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q1" value="d" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> d) Brainstorming Room
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q1" value="d" class="mr-2"> D) Tracking financial metrics
                         </label>
                     </div>
                 </div>
 
                 <!-- Question 2 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">2. Explain the core principle of "Disagree and Commit" in your own words. Why is it important for team alignment?</p>
-                    <textarea name="q2" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" placeholder="Your insightful answer here..."></textarea>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
+                    <p class="font-semibold text-gray-800 mb-3">2. The "Disagree and Commit" principle means:</p>
+                    <div class="space-y-2">
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q2" value="a" class="mr-2"> A) Always agreeing with your manager's decisions.
+                        </label>
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q2" value="b" class="mr-2"> B) Debating endlessly until everyone agrees.
+                        </label>
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q2" value="c" class="mr-2"> C) Openly discussing disagreements, then fully supporting the final decision.
+                        </label>
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q2" value="d" class="mr-2"> D) Only committing if you fully agree from the start.
+                        </label>
+                    </div>
                 </div>
 
                 <!-- Question 3 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">3. When focusing on achieving goals, the leadership content emphasizes focusing on:</p>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-100">
+                    <p class="font-semibold text-gray-800 mb-3">3. According to "The 20% Rule," leaders should focus on:</p>
                     <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q3" value="a" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> a) Only the end goals
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q3" value="a" class="mr-2"> A) Completing 80% of all tasks quickly.
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q3" value="b" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> b) The "boring stuff" and external factors
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q3" value="b" class="mr-2"> B) The 20% of efforts that yield 80% of results.
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q3" value="c" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> c) Actions and behaviors required to achieve the goals
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q3" value="c" class="mr-2"> C) Spending 20% of time on personal development.
                         </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q3" value="d" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> d) Avoiding all challenges
+                        <label class="block text-gray-700">
+                            <input type="radio" name="q3" value="d" class="mr-2"> D) Delegating 20% of their workload.
                         </label>
                     </div>
                 </div>
-
-                <!-- Question 4 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">4. According to the presentation, "Our Brain is the biggest Lie-Generator in the world."</p>
-                    <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q4" value="true" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> True
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q4" value="false" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> False
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 5 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">5. Which of the following characteristics best describes an "Infinite Game" as opposed to a "Finite Game"?</p>
-                    <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q5" value="a" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> a) Fixed rules and known players
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q5" value="b" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> b) Objective is to beat opponents
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q5" value="c" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> c) Objective is to keep the game in play and improve continuously
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q5" value="d" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> d) Joy comes from comparison
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 6 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">6. According to Stephen Covey's quote, how do we typically judge ourselves versus how we judge others?</p>
-                    <textarea name="q6" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" placeholder="Share your understanding..."></textarea>
-                </div>
-
-                <!-- Question 7 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">7. The "Cycle of Resistance" often culminates in what negative outcome?</p>
-                    <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q7" value="a" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> a) Productive problem-solving
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q7" value="b" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> b) Self-deception and avoiding reality
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q7" value="c" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> c) Strong team alignment
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q7" value="d" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> d) Immediate action and change
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 8 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">8. The "Ownership Mindset" states: "I am the problem and I am the solution for everything that happens to ME."</p>
-                    <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q8" value="true" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> True
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q8" value="false" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> False
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Question 9 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">9. What is the "1st Rule of Leadership" mentioned in the content, and what does it imply about a leader's accountability?</p>
-                    <textarea name="q9" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out" placeholder="Your thoughtful answer here..."></textarea>
-                </div>
-
-                <!-- Question 10 -->
-                <div class="bg-gray-50 p-5 rounded-lg shadow-sm border border-gray-100">
-                    <p class="font-medium text-gray-800 mb-3">10. The phrase "SLOW IS SMOOTH. SMOOTH IS FAST." suggests that:</p>
-                    <div class="space-y-2">
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q10" value="a" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> a) Rushing through tasks is the quickest way to finish.
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q10" value="b" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> b) Taking time for careful and precise work ultimately leads to greater efficiency.
-                        </label>
-                        <label class="block text-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q10" value="c" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> c) Leaders should always prioritize speed over quality.
-                        </label>
-                        <label class="block text-gray-700 cursor-pointer hover:bg-gray-100 rounded-md p-2 transition-colors">
-                            <input type="radio" name="q10" value="d" class="mr-2 rounded-full border-gray-300 text-blue-600 focus:ring-blue-500"> d) Problems are best solved by quick, impulsive decisions.
-                        </label>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mt-8">
-                    <button type="button" onclick="submitQuiz()" class="btn-primary">
-                        Submit Quiz
-                    </button>
-                    <button type="button" onclick="resetQuiz()" class="btn-secondary">
-                        Reset Quiz
-                    </button>
-                    <button type="button" onclick="toggleAnswerKey()" class="btn-accent">
-                        Toggle Answer Key (for Mentors)
-                    </button>
-                </div>
-            </form>
-
-            <!-- Quiz Result Message Box -->
-            <div id="resultMessageBox" class="hidden mt-8 p-6 rounded-lg shadow-md text-center" role="alert">
-                <p id="resultText" class="font-semibold text-lg"></p>
-                <button onclick="hideMessageBox()" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg">Close</button>
             </div>
 
+            <div class="mt-8 text-center">
+                <button id="submitQuizBtn" class="btn-primary">Submit Quiz</button>
+                <div id="quizResult" class="mt-4 text-xl font-bold text-gray-800"></div>
+            </div>
         </div>
 
         <!-- Final Presentation Tab -->
         <div id="final-presentation" class="tab-content p-6 bg-white rounded-lg shadow-md border border-gray-200">
             <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-400 pb-2 flex items-center rotate-in">
-                <span class="mr-3 text-yellow-600 text-3xl">🌟</span> The Final Ascent: Your Leadership Vision
+                <span class="mr-3 text-blue-500 text-3xl">🏆</span> Your Final Ascent: Reverse Presentation
             </h2>
-            <p class="text-gray-700 mb-4">
-                The culmination of this enriching program invites you to courageously demonstrate your deepened understanding, innovative insights, and unique leadership vision. This is your moment to synthesize everything you've learned and articulate your path forward. Each participant will undertake the creation of a truly compelling presentation:
+            <p class="text-gray-700 leading-relaxed mb-6">
+                The culmination of your Leadership Induction Program is the "Reverse Presentation." This unique opportunity empowers you to demonstrate your comprehensive understanding of our organization, its strategic direction, and your vision for contributing to its future success.
             </p>
-            <ul class="list-disc list-inside text-gray-700 space-y-3 mb-6 pl-4">
-                <li>
-                    <strong>Craft a Transformative Presentation:</strong> Design and deliver a comprehensive, insightful, and visually engaging presentation (e.g., PowerPoint, Google Slides, etc.) that eloquently summarizes your key takeaways from this entire leadership induction journey. This presentation should transcend a mere content recap; it must passionately articulate your personal understanding of effective leadership principles and, crucially, illuminate *how* you envision applying these profound learnings to excel in your future management roles within our organization.
-                </li>
-                <li>
-                    <strong>Mentor Verification & Strategic Refinement:</strong> Your developed presentation content will undergo a thorough cross-verification and collaborative refinement process with your assigned mentor. This invaluable step ensures both the factual accuracy of your understanding and the profound depth of your insights, providing an unparalleled opportunity for strategic enhancement and personalized feedback.
-                </li>
-                <li>
-                    <strong>Cross-BU Head Evaluation – Your Moment to Shine:</strong> The pinnacle of your program will involve presenting your leadership vision and insights to a distinguished Cross-Business Unit (BU) Head. This evaluation is a pivotal moment, where your readiness for leadership will be comprehensively assessed and scored based on:
-                    <ul class="list-circle list-inside ml-6 mt-2 text-gray-600 space-y-1">
-                        <li>The exceptional clarity, conciseness, and compelling nature of your presentation delivery.</li>
-                        <li>The demonstrable depth of your understanding of complex leadership concepts, showcasing true mastery.</li>
-                        <li>The insightful, practical applicability of the learned principles to real-world, dynamic scenarios specific to our company's challenges and opportunities.</li>
-                        <li>The overall effectiveness of your communication and presentation skills, serving as a powerful indicator of your innate ability to inspire and lead.</li>
-                    </ul>
-                </li>
-            </ul>
-            <img src="https://placehold.co/800x400/FFF8C9/FFA500?text=Your+Leadership+Vision" alt="Final Presentation" class="w-full rounded-lg shadow-md mt-6 mb-4 hover-grow">
-
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 mt-6">Program Outcome: Your Next Chapter</h3>
-            <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
-                <li>
-                    <strong>A Leader's Welcome:</strong> If you achieve a commendable score of <strong class="text-green-600">more than 50%</strong> in this final, comprehensive evaluation, you will be officially and warmly welcomed to our esteemed leadership team, marking your successful and well-deserved transition into a pivotal new management role!
-                </li>
-                <li>
-                    <strong>Opportunity for Enhanced Growth:</strong> Should the evaluation result in a score of 50% or less, we firmly encourage you to view this not as a setback, but as a profound and valuable opportunity for accelerated personal and professional growth. You will be advised to thoughtfully revisit the entire induction process, focusing intently on specific areas identified for improvement with continued, dedicated guidance from your mentor. You are then enthusiastically encouraged to re-attempt the evaluation after a designated period of further development, stronger and even more prepared for success.
-                </li>
-            </ul>
-
-            <div class="mt-8 p-4 bg-blue-50 rounded-lg text-blue-800 border border-blue-100 shadow-sm text-center animate-pulse">
-                <p class="text-lg font-semibold mb-2">Ready to submit your final presentation?</p>
-                <p class="mb-4">Please submit your presentation through the following Google Form:</p>
-                <a href="https://forms.gle/dcH2cjdfagtUnMTg7" target="_blank" class="btn-primary inline-flex items-center">
-                    Submit Your Presentation <span class="ml-2">↗️</span>
-                </a>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                <h3 class="text-xl font-semibold text-blue-800 mb-3 flex items-center">
+                    <span class="mr-2">💡</span> What is a Reverse Presentation?
+                </h3>
+                <p class="text-gray-700">
+                    Unlike a traditional presentation where you receive information, in a Reverse Presentation, you will present *your* insights, observations, and recommendations to senior leadership. This includes:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li>Your understanding of our company's mission, values, and strategic goals.</li>
+                    <li>Key observations from your first few months in your role.</li>
+                    <li>Opportunities for improvement or innovation you've identified.</li>
+                    <li>Your personal leadership vision and how you plan to apply the learned principles.</li>
+                </ul>
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                This session is designed not only as an assessment but as a platform for your voice to be heard at the highest levels. It's your chance to showcase your strategic thinking, leadership potential, and commitment to making a tangible impact.
+            </p>
+            <img src="https://placehold.co/800x400/D1E9FF/0066CC?text=Reverse+Presentation" alt="Reverse Presentation" class="w-full rounded-lg shadow-md mt-6 mb-4 hover-grow">
+            <div class="mt-8 text-center">
+                <p class="text-2xl font-bold text-blue-700 mb-4">Congratulations on completing your Leadership Induction Program!</p>
+                <p class="text-gray-700">We look forward to your continued contributions and leadership.</p>
             </div>
         </div>
-
-        <!-- Answer Key Section (hidden by default) -->
-        <section id="answer-key" class="hidden mt-10 p-6 bg-gray-100 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b-2 border-blue-500 pb-2">Answer Key (for Mentor/Evaluator Use)</h2>
-            <div class="space-y-4 text-gray-700">
-                <p><strong>1. b) Realistic Room</strong></p>
-                <p><strong>2. Short Answer:</strong> Disagree and Commit means team members are encouraged to voice their dissenting opinions and engage in open debate before a decision is made. However, once a decision is finalized, every team member must fully support and commit to implementing it, regardless of their initial stance. This is important for team alignment because it ensures that once a path is chosen, the entire team works cohesively towards it, preventing internal resistance or undermining of the decision.</p>
-                <p><strong>3. c) Actions and behaviors required to achieve the goals</strong></p>
-                <p><strong>4. True</strong></p>
-                <p><strong>5. c) Objective is to keep the game in play and improve continuously</strong></p>
-                <p><strong>6. Short Answer:</strong> We judge ourselves by our intentions, but we judge others by their actions.</p>
-                <p><strong>7. b) Self-deception and avoiding reality</strong></p>
-                <p><strong>8. True</strong></p>
-                <p><strong>9. Short Answer:</strong> The "1st Rule of Leadership" is "Everything is your fault." This implies that a leader takes ultimate responsibility for the team's outcomes, both successes and failures. It's a mindset of proactive accountability, ensuring the leader addresses issues and supports the team, rather than shifting blame.</p>
-                <p><strong>10. b) Taking time for careful and precise work ultimately leads to greater efficiency.</strong></p>
-            </div>
-        </section>
 
     </div>
 
     <script>
-        // Store the order of tabs and their completion status
-        const tabOrder = ['introduction', 'eligibility', 'mentor-selection', 'content', 'quiz', 'final-presentation'];
-        const tabCompletionStatus = {
-            'introduction': false,
-            'eligibility': false,
-            'mentor-selection': false, // Will be auto-completed
-            'content': false, // This will be true when all sub-tabs are reviewed
-            'quiz': false, // This will be true upon passing the quiz OR forced accessible
-            'final-presentation': false
+        // Data for the main tabs and sub-tabs
+        const mainTabsData = [
+            { id: 'introduction', label: '👋 Introduction' },
+            { id: 'eligibility', label: '🎯 Eligibility Criteria' },
+            { id: 'mentor-selection', label: '🤝 Select Your Mentor' },
+            { id: 'content', label: '🧠 Charting Your Leadership Course' },
+            { id: 'quiz', label: '✅ Assessment Quiz' },
+            { id: 'final-presentation', label: '🏆 Final Ascent' }
+        ];
+
+        const subTabsData = {
+            'content': [
+                { id: 'mindset-thinking', label: 'Mindset & Thinking' },
+                { id: 'team-dynamics', label: 'Team Dynamics' },
+                { id: 'strategic-execution', label: 'Strategic Execution' },
+                { id: 'leader-accountability', label: 'Leader\'s Accountability' }
+            ]
         };
 
-        // Keep track of reviewed sub-tabs within 'content'
-        const subTabReviewStatus = {
-            'mindset-thinking': false,
-            'team-dynamics': false,
-            'strategic-execution': false,
-            'leader-accountability': false
-        };
-
-        // --- Progress Bar Update Function (Moved to top for scope) ---
-        function updateProgressBar(activeTabId = null) {
-            const steps = document.querySelectorAll('#progress-tracker .progress-step');
-            const connectors = document.querySelectorAll('#progress-tracker .progress-step-connector');
-
-            steps.forEach((step, index) => {
-                const tabId = step.getAttribute('data-tab-id');
-
-                step.classList.remove('active', 'completed');
-                step.querySelector('.progress-step-circle').classList.remove('bg-blue-500', 'bg-emerald-500', 'shadow-[0_0_0_5px_rgba(59,130,246,0.5)]');
-                step.querySelector('.progress-step-label').classList.remove('text-blue-900', 'font-semibold');
-
-                if (tabCompletionStatus[tabId]) {
-                    step.classList.add('completed');
-                    step.querySelector('.progress-step-circle').classList.add('bg-emerald-500');
-                    step.querySelector('.progress-step-label').classList.add('text-blue-900', 'font-semibold');
-                } else {
-                    step.querySelector('.progress-step-circle').classList.add('bg-gray-400');
-                    step.querySelector('.progress-step-label').classList.add('text-gray-600');
-                }
-
-                if (tabId === activeTabId) {
-                    step.classList.add('active');
-                    step.querySelector('.progress-step-circle').classList.add('bg-blue-500');
-                    step.querySelector('.progress-step-circle').classList.add('shadow-[0_0_0_5px_rgba(59,130,246,0.5)]');
-                    step.querySelector('.progress-step-label').classList.add('text-blue-900', 'font-semibold');
-                }
-
-                // Update connectors
-                if (index < connectors.length) {
-                    if (tabCompletionStatus[tabId]) {
-                        connectors[index].classList.add('completed');
-                        connectors[index].style.backgroundColor = '#3b82f6'; // blue-500
-                    } else {
-                        connectors[index].classList.remove('completed');
-                        connectors[index].style.backgroundColor = '#cbd5e1'; // gray-400
-                    }
-                }
-            });
-        }
-
-        // Function to show custom message box
-        function showMessageBox(message, type = 'info') {
-            const messageBox = document.getElementById('resultMessageBox');
-            const resultText = document.getElementById('resultText');
-            resultText.textContent = message;
-
-            messageBox.classList.remove('hidden', 'bg-green-100', 'bg-red-100', 'text-green-800', 'text-red-800', 'bg-blue-100', 'text-blue-800');
-            if (type === 'success') {
-                messageBox.classList.add('bg-green-100', 'text-green-800');
-            } else if (type === 'error') {
-                messageBox.classList.add('bg-red-100', 'text-red-800');
-            } else {
-                messageBox.classList.add('bg-blue-100', 'text-blue-800'); // Default info
-            }
-            messageBox.style.display = 'block'; // Ensure it's displayed
-        }
-
-        // Function to hide custom message box
-        function hideMessageBox() {
-            document.getElementById('resultMessageBox').style.display = 'none';
-        }
-
-        const correctAnswers = {
+        const quizAnswers = {
             q1: 'b',
-            q2: "Disagree and Commit means team members are encouraged to voice their dissenting opinions and engage in open debate before a decision is made. However, once a decision is finalized, every team member must fully support and commit to implementing it, regardless of their initial stance. This is important for team alignment because it ensures that once a path is chosen, the entire team works cohesively towards it, preventing internal resistance or undermining of the decision.",
-            q3: 'c',
-            q4: 'true',
-            q5: 'c',
-            q6: "We judge ourselves by our intentions, but we judge others by their actions.",
-            q7: 'b',
-            q8: 'true',
-            q9: "The \"1st Rule of Leadership\" is \"Everything is your fault.\" This implies that a leader takes ultimate responsibility for the team's outcomes, both successes and failures. It's a mindset of proactive accountability, ensuring the leader addresses issues and supports the team, rather than shifting blame.",
-            q10: 'b'
+            q2: 'c',
+            q3: 'b'
         };
 
-        function submitQuiz() {
-            let score = 0;
-            const form = document.getElementById('quizForm');
-            const totalQuestions = 10;
-
-            // Multiple Choice Questions
-            const q1Answer = form.elements['q1'].value;
-            if (q1Answer === correctAnswers.q1) score++;
-
-            const q3Answer = form.elements['q3'].value;
-            if (q3Answer === correctAnswers.q3) score++;
-
-            const q4Answer = form.elements['q4'].value;
-            if (q4Answer === correctAnswers.q4) score++;
-
-            const q5Answer = form.elements['q5'].value;
-            if (q5Answer === correctAnswers.q5) score++;
-
-            const q7Answer = form.elements['q7'].value;
-            if (q7Answer === correctAnswers.q7) score++;
-
-            const q8Answer = form.elements['q8'].value;
-            if (q8Answer === correctAnswers.q8) score++;
-
-            const q10Answer = form.elements['q10'].value;
-            if (q10Answer === correctAnswers.q10) score++;
-
-
-            // Short Answer Questions (simplified automated check - mentor would manually verify in real scenario)
-            const q2Answer = form.elements['q2'].value.trim().toLowerCase();
-            const q6Answer = form.elements['q6'].value.trim().toLowerCase();
-            const q9Answer = form.elements['q9'].value.trim().toLowerCase();
-
-            // These checks are intentionally simple. For a real system, more robust NLP or manual grading would be needed for short answers.
-            if (q2Answer.includes(correctAnswers.q2.toLowerCase().substring(0, Math.min(correctAnswers.q2.length, 50))) && q2Answer.length > 20) score++;
-            if (q6Answer.includes(correctAnswers.q6.toLowerCase().substring(0, Math.min(correctAnswers.q6.length, 30))) && q6Answer.length > 10) score++;
-            if (q9Answer.includes(correctAnswers.q9.toLowerCase().substring(0, Math.min(correctAnswers.q9.length, 50))) && q9Answer.length > 15) score++;
-
-
-            const percentage = (score / totalQuestions) * 100;
-
-            let message = `You scored ${score} out of ${totalQuestions} (${percentage.toFixed(2)}%). `;
-            let messageType = 'info';
-
-            if (percentage >= 50) {
-                message += "Outstanding! You have successfully passed the assessment quiz and are ready for the next phase of your leadership journey. Keep up the excellent work!";
-                messageType = 'success';
-                tabCompletionStatus['quiz'] = true; // Mark quiz tab as complete
-                enableNextTab('quiz'); // Enable the next tab (Final Presentation)
-            } else {
-                message += "Keep Going! While you didn't pass this time, remember that every challenge is an opportunity to grow. Please review the leadership content with your mentor, seek clarification on areas of difficulty, and try again when you're ready. Your leadership journey continues!";
-                messageType = 'error';
+        // Function to open main tabs
+        function openTab(evt, tabId) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
             }
-
-            showMessageBox(message, messageType);
-        }
-
-        function resetQuiz() {
-            document.getElementById('quizForm').reset();
-            hideMessageBox();
-            document.querySelectorAll('#quizForm input[type="radio"]').forEach(radio => radio.checked = false);
-        }
-
-        function toggleAnswerKey() {
-            const answerKey = document.getElementById('answer-key');
-            if (answerKey.classList.contains('hidden')) {
-                answerKey.classList.remove('hidden');
-                answerKey.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                answerKey.classList.add('hidden');
-            }
-        }
-
-        // --- Tab Navigation Logic with Sequential Access ---
-
-        function updateTabButtons() {
-            const tabButtons = document.querySelectorAll('.main-tab-button');
-            tabButtons.forEach(button => {
-                const tabId = button.getAttribute('data-tab-id');
-                const currentIndex = tabOrder.indexOf(tabId);
-                const prevTabId = tabOrder[currentIndex - 1];
-
-                // A tab is enabled if it's the first tab, OR if the previous tab is complete.
-                // Special condition: 'final-presentation' is always enabled if 'quiz' OR 'content' is complete.
-                if (tabId === 'final-presentation') {
-                    if (tabCompletionStatus['quiz'] || tabCompletionStatus['content']) {
-                        button.classList.remove('btn-disabled');
-                        button.disabled = false;
-                    } else {
-                        button.classList.add('btn-disabled');
-                        button.disabled = true;
-                    }
-                } else if (currentIndex === 0 || tabCompletionStatus[prevTabId]) {
-                    button.classList.remove('btn-disabled');
-                    button.disabled = false;
-                } else {
-                    button.classList.add('btn-disabled');
-                    button.disabled = true;
-                }
-            });
-        }
-
-        function openTab(evt, tabName) {
-            const currentTabButton = evt.currentTarget;
-            const tabId = currentTabButton.getAttribute('data-tab-id');
-            const currentIndex = tabOrder.indexOf(tabId);
-            const prevTabId = tabOrder[currentIndex - 1];
-
-            // Check if the tab is disabled
-            if (currentTabButton.classList.contains('btn-disabled')) {
-                showMessageBox(`Please complete the previous section before proceeding to the '${getTabTitle(tabId)}' section.`, 'error');
-                return;
-            }
-
-            // Hide all tab contents and remove active class from buttons
-            const tabcontents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabcontents.length; i++) {
-                tabcontents[i].classList.remove("active");
-            }
-            const tablinks = document.getElementsByClassName("main-tab-button");
-            for (let i = 0; i < tablinks.length; i++) {
+            tablinks = document.getElementsByClassName("main-tab-button");
+            for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("active");
             }
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            updateProgressBar(tabId);
+        }
 
-            // Show the selected tab and set button as active
-            document.getElementById(tabName).classList.add("active");
-            currentTabButton.classList.add("active");
-
-            // Update progress bar
-            updateProgressBar(tabName);
-
-            // Special handling for mentor-selection and content tabs
-            if (tabName === 'mentor-selection' && !tabCompletionStatus['mentor-selection']) {
-                // Auto-complete mentor selection tab when opened
-                setTimeout(() => {
-                    markTabComplete('mentor-selection');
-                }, 500); // 500ms delay
-            } else if (tabName === 'content') {
-                const firstSubTabButton = document.querySelector('#content .sub-tab-button');
-                if (firstSubTabButton) {
-                    openSubTab({currentTarget: firstSubTabButton}, firstSubTabButton.getAttribute('data-subtab-id'));
-                }
+        // Function to open sub-tabs
+        function openSubTab(evt, subTabId) {
+            let i, subtabcontent, subtablinks;
+            subtabcontent = document.getElementsByClassName("sub-tab-content");
+            for (i = 0; i < subtabcontent.length; i++) {
+                subtabcontent[i].classList.remove("active");
             }
-            hideMessageBox(); // Hide any previous messages
+            subtablinks = evt.currentTarget.parentNode.getElementsByClassName("sub-tab-button");
+            for (i = 0; i < subtablinks.length; i++) {
+                subtablinks[i].classList.remove("active");
+            }
+            document.getElementById(subTabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
         }
 
-        function getTabTitle(tabId) {
-            const button = document.querySelector(`.main-tab-button[data-tab-id="${tabId}"]`);
-            // Remove emojis and trim whitespace
-            return button ? button.textContent.replace(/[\uD800-\uDBFF\uDC00-\uDFFF]/g, '').trim() : tabId;
+        // Progress Bar Update Function
+        function updateProgressBar(activeTabId) {
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const progressConnectors = document.querySelectorAll('.progress-step-connector');
+            let activeIndex = -1;
+
+            progressSteps.forEach((step, index) => {
+                const stepTabId = step.dataset.tabId;
+                if (stepTabId === activeTabId) {
+                    activeIndex = index;
+                }
+                // Reset all states
+                step.classList.remove('active', 'completed');
+                const circle = step.querySelector('.progress-step-circle');
+                if (circle) circle.style.backgroundColor = ''; // Reset inline style
+                const label = step.querySelector('.progress-step-label');
+                if (label) {
+                    label.style.color = ''; // Reset inline style
+                    label.style.fontWeight = ''; // Reset inline style
+                }
+            });
+
+            progressConnectors.forEach(connector => {
+                connector.classList.remove('completed');
+            });
+
+            // Set active and completed states
+            progressSteps.forEach((step, index) => {
+                if (index < activeIndex) {
+                    step.classList.add('completed');
+                    if (progressConnectors[index]) {
+                        progressConnectors[index].classList.add('completed');
+                    }
+                } else if (index === activeIndex) {
+                    step.classList.add('active');
+                }
+            });
         }
 
-
+        // Function to mark a tab as complete and enable the next one
         function markTabComplete(completedTabId) {
-            tabCompletionStatus[completedTabId] = true;
-
-            // If content tab is completed, automatically mark quiz as complete to unlock Final Ascent
-            if (completedTabId === 'content') {
-                tabCompletionStatus['quiz'] = true;
-            }
-
-            showMessageBox(`'${getTabTitle(completedTabId)}' section marked as complete!`, 'success');
-
-            const currentIndex = tabOrder.indexOf(completedTabId);
-            if (currentIndex < tabOrder.length - 1) {
-                const nextTabId = tabOrder[currentIndex + 1];
-                enableNextTab(completedTabId); // Enable the next tab
-                // Automatically switch to the next tab if it's now enabled
-                const nextTabButton = document.querySelector(`.main-tab-button[data-tab-id="${nextTabId}"]`);
-                if (nextTabButton && !nextTabButton.classList.contains('btn-disabled')) {
-                    nextTabButton.click();
-                }
-            }
-            updateTabButtons(); // Update all buttons' disabled states
-            updateProgressBar(); // Update progress bar
-        }
-
-        function enableNextTab(currentTabId) {
-            const currentIndex = tabOrder.indexOf(currentTabId);
-            if (currentIndex < tabOrder.length - 1) {
-                const nextTabId = tabOrder[currentIndex + 1];
+            const currentTabIndex = mainTabsData.findIndex(tab => tab.id === completedTabId);
+            if (currentTabIndex !== -1 && currentTabIndex < mainTabsData.length - 1) {
+                const nextTabId = mainTabsData[currentTabIndex + 1].id;
                 const nextTabButton = document.querySelector(`.main-tab-button[data-tab-id="${nextTabId}"]`);
                 if (nextTabButton) {
                     nextTabButton.classList.remove('btn-disabled');
-                    nextTabButton.disabled = false;
+                    // Optionally, automatically open the next tab
+                    nextTabButton.click();
+                }
+            }
+            // Also mark the corresponding progress step as completed
+            const completedProgressStep = document.querySelector(`.progress-step[data-tab-id="${completedTabId}"]`);
+            if (completedProgressStep) {
+                completedProgressStep.classList.add('completed');
+                const progressConnectors = document.querySelectorAll('.progress-step-connector'); // Re-query inside if needed
+                const connectorIndex = mainTabsData.findIndex(tab => tab.id === completedTabId);
+                if (connectorIndex < progressConnectors.length) {
+                    progressConnectors[connectorIndex].classList.add('completed');
                 }
             }
         }
 
-        // --- Sub-Tab Logic ---
+        // Handle Quiz Submission
+        const submitQuizBtn = document.getElementById('submitQuizBtn');
+        if (submitQuizBtn) {
+            submitQuizBtn.addEventListener('click', function() {
+                let score = 0;
+                let totalQuestions = 0;
+                const quizResultDiv = document.getElementById('quizResult');
 
-        function updateSubTabButtons() {
-            const subTabButtons = document.querySelectorAll('.sub-tab-button');
-            const subTabIds = Array.from(subTabButtons).map(btn => btn.getAttribute('data-subtab-id'));
+                for (let qNum = 1; qNum <= 3; qNum++) { // Assuming 3 questions
+                    totalQuestions++;
+                    const selectedOption = document.querySelector(`input[name="q${qNum}"]:checked`);
+                    if (selectedOption && selectedOption.value === quizAnswers[`q${qNum}`]) {
+                        score++;
+                    }
+                }
 
-            subTabButtons.forEach(button => {
-                const subTabId = button.getAttribute('data-subtab-id');
-                const currentIndex = subTabIds.indexOf(subTabId);
-                const prevSubTabId = subTabIds[currentIndex - 1];
-
-                if (currentIndex === 0 || subTabReviewStatus[prevSubTabId]) {
-                    button.classList.remove('btn-disabled');
-                    button.disabled = false;
-                } else {
-                    button.classList.add('btn-disabled');
-                    button.disabled = true;
+                if (quizResultDiv) {
+                    quizResultDiv.textContent = `You scored ${score} out of ${totalQuestions}!`;
+                    if (score === totalQuestions) {
+                        quizResultDiv.classList.remove('text-red-600');
+                        quizResultDiv.classList.add('text-green-600');
+                        markTabComplete('quiz'); // Mark quiz tab complete if perfect score
+                    } else {
+                        quizResultDiv.classList.remove('text-green-600');
+                        quizResultDiv.classList.add('text-red-600');
+                    }
                 }
             });
-
-            // Check if all sub-tabs are reviewed to enable the main 'content' tab's proceed button
-            const allSubTabsReviewed = Object.values(subTabReviewStatus).every(status => status === true);
-            const contentTabProceedBtn = document.getElementById('contentTabProceedBtn');
-            if (allSubTabsReviewed) {
-                contentTabProceedBtn.classList.remove('btn-disabled');
-                contentTabProceedBtn.disabled = false;
-            } else {
-                contentTabProceedBtn.classList.add('btn-disabled');
-                contentTabProceedBtn.disabled = true;
-            }
         }
 
-        function openSubTab(evt, subTabName) {
-            const currentSubTabButton = evt.currentTarget;
-            const subTabId = currentSubTabButton.getAttribute('data-subtab-id');
-            const subTabIds = Array.from(document.querySelectorAll('.sub-tab-button')).map(btn => btn.getAttribute('data-subtab-id'));
-            const currentIndex = subTabIds.indexOf(subTabId);
-            const prevSubTabId = subTabIds[currentIndex - 1];
 
-            // Check if the sub-tab is disabled
-            if (currentSubTabButton.classList.contains('btn-disabled')) {
-                showMessageBox(`Please review the previous sub-section before proceeding.`, 'error');
-                return;
-            }
+        // AI Email Generation Logic
+        const generateEmailBtn = document.getElementById('generateEmailBtn');
+        const managerNameInput = document.getElementById('managerName');
+        const teamNameInput = document.getElementById('teamName');
+        const generatedEmailOutput = document.getElementById('generatedEmail');
+        const emailOutputContainer = document.getElementById('emailOutputContainer');
+        const copyEmailBtn = document.getElementById('copyEmailBtn');
+        const emailSpinner = document.getElementById('emailSpinner');
 
-            const subtabcontents = document.getElementsByClassName("sub-tab-content");
-            for (let i = 0; i < subtabcontents.length; i++) {
-                subtabcontents[i].classList.remove("active");
-            }
+        if (generateEmailBtn) {
+            generateEmailBtn.addEventListener('click', async () => {
+                const managerName = managerNameInput ? managerNameInput.value.trim() : '';
+                const teamName = teamNameInput ? teamNameInput.value.trim() : '';
 
-            const subtablinks = document.getElementsByClassName("sub-tab-button");
-            for (let i = 0; i < subtablinks.length; i++) {
-                subtablinks[i].classList.remove("active");
-            }
-
-            document.getElementById(subTabName).classList.add("active");
-            currentSubTabButton.classList.add("active");
-            hideMessageBox(); // Hide any previous messages
-        }
-
-        function markSubTabReviewed(subTabId) {
-            subTabReviewStatus[subTabId] = true;
-            showMessageBox(`Sub-section marked as reviewed!`, 'success');
-
-            const subTabButtons = document.querySelectorAll('.sub-tab-button');
-            const subTabIds = Array.from(subTabButtons).map(btn => btn.getAttribute('data-subtab-id'));
-            const currentIndex = subTabIds.indexOf(subTabId);
-
-            if (currentIndex < subTabIds.length - 1) {
-                const nextSubTabId = subTabIds[currentIndex + 1];
-                const nextSubTabButton = document.querySelector(`.sub-tab-button[data-subtab-id="${nextSubTabId}"]`);
-                if (nextSubTabButton) {
-                    nextSubTabButton.classList.remove('btn-disabled');
-                    nextSubTabButton.disabled = false;
-                    // Auto-advance to the next sub-tab
-                    openSubTab({currentTarget: nextSubTabButton}, nextSubTabId);
+                if (!managerName || !teamName) {
+                    const messageBox = document.createElement('div');
+                    messageBox.style.cssText = `
+                        position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                        z-index: 1000; text-align: center;
+                    `;
+                    messageBox.innerHTML = `
+                        <p class="text-slate-800 mb-4">Please enter both your name and the team name.</p>
+                        <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">OK</button>
+                    `;
+                    document.body.appendChild(messageBox);
+                    messageBox.querySelector('button').addEventListener('click', () => messageBox.remove());
+                    return;
                 }
-            }
-            updateSubTabButtons(); // Re-evaluate states for all sub-tabs and main content button
+
+                if (generatedEmailOutput) generatedEmailOutput.value = '';
+                if (emailOutputContainer) emailOutputContainer.classList.add('hidden');
+                if (emailSpinner) emailSpinner.style.display = 'block';
+                generateEmailBtn.disabled = true;
+
+                const prompt = `Draft a professional and friendly email for a new manager named "${managerName}" to send to their new team, "${teamName}". The email should introduce the manager, express excitement about joining the team, and briefly mention looking forward to collaborating and learning from everyone. Keep it concise.`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will provide this at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        if (generatedEmailOutput) generatedEmailOutput.value = text;
+                        if (emailOutputContainer) emailOutputContainer.classList.remove('hidden');
+                    } else {
+                        if (generatedEmailOutput) generatedEmailOutput.value = 'Failed to generate email. Please try again.';
+                        if (emailOutputContainer) emailOutputContainer.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    if (generatedEmailOutput) generatedEmailOutput.value = 'An error occurred: ' + error.message;
+                    if (emailOutputContainer) emailOutputContainer.classList.remove('hidden');
+                } finally {
+                    if (emailSpinner) emailSpinner.style.display = 'none';
+                    generateEmailBtn.disabled = false;
+                }
+            });
         }
 
 
-        // Set the default open tab on load, and initialize disabled states
-        document.addEventListener('DOMContentLoaded', (event) => {
-            updateTabButtons(); // Initially disable all tabs except the first
-            updateSubTabButtons(); // Initially disable all sub-tabs except the first
-
-            // Automatically mark introduction as complete and move to eligibility
-            setTimeout(() => {
-                markTabComplete('introduction');
-            }, 100);
-
-            // Ensure the correct tab is active initially based on progress
-            let firstIncompleteTab = tabOrder[0];
-            for(let i = 0; i < tabOrder.length; i++) {
-                if (!tabCompletionStatus[tabOrder[i]]) {
-                    firstIncompleteTab = tabOrder[i];
-                    break;
+        if (copyEmailBtn) {
+            copyEmailBtn.addEventListener('click', () => {
+                if (generatedEmailOutput) {
+                    generatedEmailOutput.select();
+                    generatedEmailOutput.setSelectionRange(0, 99999);
+                    try {
+                        document.execCommand('copy');
+                        const messageBox = document.createElement('div');
+                        messageBox.style.cssText = `
+                            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                            background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                            z-index: 1000; text-align: center;
+                        `;
+                        messageBox.innerHTML = `
+                            <p class="text-slate-800 mb-4">Email copied to clipboard!</p>
+                            <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">OK</button>
+                        `;
+                        document.body.appendChild(messageBox);
+                        messageBox.querySelector('button').addEventListener('click', () => messageBox.remove());
+                    } catch (err) {
+                        const messageBox = document.createElement('div');
+                        messageBox.style.cssText = `
+                            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                            background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                            z-index: 1000; text-align: center;
+                        `;
+                        messageBox.innerHTML = `
+                            <p class="text-slate-800 mb-4">Failed to copy text. Please copy manually.</p>
+                            <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">OK</button>
+                        `;
+                        document.body.appendChild(messageBox);
+                        messageBox.querySelector('button').addEventListener('click', () => messageBox.remove());
+                    }
                 }
-            }
-            document.querySelector(`.main-tab-button[data-tab-id="${firstIncompleteTab}"]`).click();
+            });
+        }
 
-            // Initial update of the progress bar
-            updateProgressBar(firstIncompleteTab);
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activate the first tab and update progress bar
+            const firstTabButton = document.querySelector('.main-tab-button');
+            if (firstTabButton) {
+                firstTabButton.click();
+            }
+
+
+            // Auto-complete the "Mentor Selection" tab when it's opened
+            const mentorSelectionButton = document.querySelector('.main-tab-button[data-tab-id="mentor-selection"]');
+            if (mentorSelectionButton) {
+                mentorSelectionButton.addEventListener('click', function() {
+                    // Use a small timeout to ensure the tab is fully active before marking complete
+                    setTimeout(() => markTabComplete('mentor-selection'), 100);
+                });
+            }
         });
-
     </script>
+
 </body>
 </html>
