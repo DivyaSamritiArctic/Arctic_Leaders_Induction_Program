@@ -51,9 +51,7 @@
         .btn-success {
             @apply bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-2 px-5 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300;
         }
-        .btn-disabled {
-            @apply opacity-50 cursor-not-allowed;
-        }
+        /* Removed btn-disabled class from here as it's no longer needed for tab navigation */
 
         /* Animation for fade-in */
         @keyframes fadeIn {
@@ -215,22 +213,22 @@
             <button class="main-tab-button active flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="introduction" onclick="openTab(event, 'introduction')">
                 👋 Introduction
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300 btn-disabled" data-tab-id="timeline" onclick="openTab(event, 'timeline')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="timeline" onclick="openTab(event, 'timeline')">
                 🗓️ Induction Timeline
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300 btn-disabled" data-tab-id="eligibility" onclick="openTab(event, 'eligibility')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="eligibility" onclick="openTab(event, 'eligibility')">
                 🎯 Eligibility Criteria
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300 btn-disabled" data-tab-id="mentor-selection" onclick="openTab(event, 'mentor-selection')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="mentor-selection" onclick="openTab(event, 'mentor-selection')">
                 🤝 Select Your Mentor
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300 btn-disabled" data-tab-id="content" onclick="openTab(event, 'content')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="content" onclick="openTab(event, 'content')">
                 🧠 Charting Your Leadership Course
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300 btn-disabled" data-tab-id="quiz" onclick="openTab(event, 'quiz')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg border-r border-gray-200 transition duration-300" data-tab-id="quiz" onclick="openTab(event, 'quiz')">
                 ✅ Assessment Quiz
             </button>
-            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg transition duration-300 btn-disabled" data-tab-id="final-presentation" onclick="openTab(event, 'final-presentation')">
+            <button class="main-tab-button flex-grow md:flex-grow-0 py-4 px-6 text-center text-base md:text-lg transition duration-300" data-tab-id="final-presentation" onclick="openTab(event, 'final-presentation')">
                 🏆 Final Ascent
             </button>
         </div>
@@ -349,7 +347,7 @@
             </div>
         </div>
 
-        <!-- Select Your Mentor Tab (NEW) -->
+        <!-- Select Your Mentor Tab -->
         <div id="mentor-selection" class="tab-content p-6 bg-white rounded-lg shadow-md border border-gray-200">
             <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-blue-400 pb-2 flex items-center rotate-in">
                 <span class="mr-3 text-purple-500 text-3xl">🤝</span> Forge Your Path: Mentor Assignment
@@ -378,13 +376,13 @@
                 <button class="sub-tab-button active flex-grow py-3 px-4 text-sm md:text-base border-r border-gray-200 rounded-tl-lg" data-subtab-id="mindset-thinking" onclick="openSubTab(event, 'mindset-thinking')">
                     Mindset & Thinking
                 </button>
-                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base border-r border-gray-200 btn-disabled" data-subtab-id="team-dynamics" onclick="openSubTab(event, 'team-dynamics')">
+                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base border-r border-gray-200" data-subtab-id="team-dynamics" onclick="openSubTab(event, 'team-dynamics')">
                     Team Dynamics
                 </button>
-                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base border-r border-gray-200 btn-disabled" data-subtab-id="strategic-execution" onclick="openSubTab(event, 'strategic-execution')">
+                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base border-r border-gray-200" data-subtab-id="strategic-execution" onclick="openSubTab(event, 'strategic-execution')">
                     Strategic Execution
                 </button>
-                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base rounded-tr-lg btn-disabled" data-subtab-id="leader-accountability" onclick="openSubTab(event, 'leader-accountability')">
+                <button class="sub-tab-button flex-grow py-3 px-4 text-sm md:text-base rounded-tr-lg" data-subtab-id="leader-accountability" onclick="openSubTab(event, 'leader-accountability')">
                     Leader's Accountability
                 </button>
             </div>
@@ -674,7 +672,7 @@
         // Data for the main tabs and sub-tabs
         const mainTabsData = [
             { id: 'introduction', label: '👋 Introduction' },
-            { id: 'timeline', label: '🗓️ Induction Timeline' }, // New tab added here
+            { id: 'timeline', label: '🗓️ Induction Timeline' },
             { id: 'eligibility', label: '🎯 Eligibility Criteria' },
             { id: 'mentor-selection', label: '🤝 Select Your Mentor' },
             { id: 'content', label: '🧠 Charting Your Leadership Course' },
@@ -767,23 +765,13 @@
             });
         }
 
-        // Function to mark a tab as complete and enable the next one
+        // Function to mark a tab as complete and enable the next one (modified)
         function markTabComplete(completedTabId) {
-            const currentTabIndex = mainTabsData.findIndex(tab => tab.id === completedTabId);
-            if (currentTabIndex !== -1 && currentTabIndex < mainTabsData.length - 1) {
-                const nextTabId = mainTabsData[currentTabIndex + 1].id;
-                const nextTabButton = document.querySelector(`.main-tab-button[data-tab-id="${nextTabId}"]`);
-                if (nextTabButton) {
-                    nextTabButton.classList.remove('btn-disabled');
-                    // Optionally, automatically open the next tab
-                    nextTabButton.click();
-                }
-            }
-            // Also mark the corresponding progress step as completed
+            // This function now only updates the progress bar, it does not enable the next tab.
             const completedProgressStep = document.querySelector(`.progress-step[data-tab-id="${completedTabId}"]`);
             if (completedProgressStep) {
                 completedProgressStep.classList.add('completed');
-                const progressConnectors = document.querySelectorAll('.progress-step-connector'); // Re-query inside if needed
+                const progressConnectors = document.querySelectorAll('.progress-step-connector');
                 const connectorIndex = mainTabsData.findIndex(tab => tab.id === completedTabId);
                 if (connectorIndex < progressConnectors.length) {
                     progressConnectors[connectorIndex].classList.add('completed');
@@ -940,15 +928,13 @@
                 firstTabButton.click();
             }
 
-
-            // Auto-complete the "Mentor Selection" tab when it's opened
-            const mentorSelectionButton = document.querySelector('.main-tab-button[data-tab-id="mentor-selection"]');
-            if (mentorSelectionButton) {
-                mentorSelectionButton.addEventListener('click', function() {
-                    // Use a small timeout to ensure the tab is fully active before marking complete
-                    setTimeout(() => markTabComplete('mentor-selection'), 100);
-                });
-            }
+            // No need for auto-complete on mentor selection as all tabs are now open
+            // const mentorSelectionButton = document.querySelector('.main-tab-button[data-tab-id="mentor-selection"]');
+            // if (mentorSelectionButton) {
+            //     mentorSelectionButton.addEventListener('click', function() {
+            //         setTimeout(() => markTabComplete('mentor-selection'), 100);
+            //     });
+            // }
         });
     </script>
 
